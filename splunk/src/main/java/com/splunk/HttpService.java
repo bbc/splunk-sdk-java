@@ -80,6 +80,11 @@ public class HttpService {
      */
     protected int port = 8089;
 
+    /**
+     * Modify URL paths when the splunk API is on a different path.
+     */
+    private PathModifier pathModifier = PathModifier.DEFAULT;
+
     protected Integer connectTimeout = null;
     protected Integer readTimeout = null;
 
@@ -232,6 +237,14 @@ public class HttpService {
             sslSecurityProtocol = securityProtocol;
             sslSocketFactory = createSSLFactory();
         }
+    }
+
+    public PathModifier getPathModifier() {
+        return pathModifier;
+    }
+
+    public void setPathModifier(PathModifier pathModifier) {
+        this.pathModifier = pathModifier;
     }
 
     /**
@@ -441,7 +454,7 @@ public class HttpService {
      */
     public ResponseMessage send(String path, RequestMessage request) {
         // Construct a full URL to the resource
-        URL url = getUrl(path);
+        URL url = getUrl(pathModifier.modify(path));
         // Create and initialize the connection object
         HttpURLConnection cn;
         try {
