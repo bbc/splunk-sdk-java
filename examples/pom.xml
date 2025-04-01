@@ -6,7 +6,7 @@
     <parent>
         <artifactId>splunk-sdk-java</artifactId>
         <groupId>uk.co.bbc.com.splunk</groupId>
-        <version>1.0.2</version>
+        <version>1.0.3-SNAPSHOT</version>
     </parent>
 
     <build>
@@ -35,7 +35,7 @@
         <dependency>
             <groupId>uk.co.bbc.com.splunk</groupId>
             <artifactId>splunk</artifactId>
-            <version>1.9.6</version>
+            <version>1.9.7-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
