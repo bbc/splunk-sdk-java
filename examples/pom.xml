@@ -35,9 +35,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.splunk</groupId>
+            <groupId>uk.co.bbc.com.splunk</groupId>
             <artifactId>splunk</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
